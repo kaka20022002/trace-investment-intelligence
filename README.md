@@ -122,7 +122,7 @@
 
 ## 部署与源码
 
-- **当前公网静态演示**：GitHub Pages，由 `.github/workflows/deploy-pages.yml` 在推送 `main` 后构建并发布 `dist/`。构建使用相对 `base`，适配项目子路径。
+- **当前公网静态演示**：GitHub Pages，源分支 `gh-pages`（由生产构建产物 `dist/` 发布）。Vite `base: "./"`，适配项目子路径。本地保留 `.github/workflows/deploy-pages.yml` 供后续 Actions 自动部署（需在有 Git 推送权限的环境启用）。
 - **Node 完整版本**：构建后运行 `npm start`，配置服务端环境变量；公网使用 HTTPS 反向代理，并为模型 API 加认证和全局限流。详见 `docs/DEPLOYMENT.md`。
 - 远程仓库：https://github.com/kaka20022002/trace-investment-intelligence （Public）。
 - `.env`、依赖、构建和测试输出、开发会话目录均被忽略，禁止提交密钥、个人隐私与受限数据。
