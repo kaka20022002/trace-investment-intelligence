@@ -9,7 +9,9 @@
 | 本机开发 | `http://localhost:5173` |
 | 本机生产 Node（含可选 `/api`） | `http://localhost:4173` |
 
-公网站点由 GitHub Actions（`.github/workflows/deploy-pages.yml`）在 `main` 推送后构建并部署。静态托管无模型 API，页面会如实回退规则模式；主链路（工作台、导入归并、时间线、备份）可完整操作。
+公网站点当前由 **`gh-pages` 分支**托管（内容为 `npm run build` 生成的 `dist/`）。静态托管无模型 API，页面会如实回退规则模式；主链路（工作台、导入归并、时间线、备份）可完整操作。
+
+更新静态站：本地执行 `npm run build` 后，将 `dist/` 内容发布到 `gh-pages` 分支根目录（可附带空文件 `.nojekyll`）。仓库内亦保留 `.github/workflows/deploy-pages.yml`，在可正常 `git push` 到 GitHub 的环境中可改为 Actions 自动部署。
 
 **换机先阅读根目录 `HANDOFF.md`。** 以下 EdgeOne / Node 内容保留为备选或完整模型部署参考。
 
